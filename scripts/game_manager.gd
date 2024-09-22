@@ -13,6 +13,7 @@ var is_scene_visible = false
 func _toggle_scene():
 	is_scene_visible = !is_scene_visible
 	if EscMenuNode != null:
+		
 		EscMenuNode.visible = is_scene_visible
 
 
