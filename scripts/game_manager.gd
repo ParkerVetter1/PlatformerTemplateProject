@@ -14,7 +14,6 @@ func _toggle_scene():
 	is_scene_visible = !is_scene_visible
 	if EscMenuNode != null:
 		EscMenuNode.visible = is_scene_visible
-	print("Scene is now ", is_scene_visible)
 
 
 # Function to call when the Esc key is pressed
