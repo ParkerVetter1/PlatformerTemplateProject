@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckj5csyswasae"]
+
+[ext_resource type="Script" path="res://scripts/EscMenuScript.gd" id="1_pstqr"]
+
+[node name="EscMenu" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pstqr")
+
+[node name="ReturnToGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 200.0
+offset_right = 637.0
+offset_bottom = 270.0
+text = "Return to Game"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 303.0
+offset_right = 637.0
+offset_bottom = 373.0
+text = "Settings"
+
+[node name="ReturnToMainMenu" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 400.0
+offset_right = 637.0
+offset_bottom = 470.0
+text = "Return to Main Menu"
+
+[node name="CloseGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 496.0
+offset_right = 637.0
+offset_bottom = 566.0
+text = "Close Game
+"
+
+[connection signal="pressed" from="ReturnToGameButton" to="." method="_on_return_to_game_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ReturnToMainMenu" to="." method="_on_return_to_main_menu_pressed"]
+[connection signal="pressed" from="CloseGameButton" to="." method="_on_close_game_button_pressed"]

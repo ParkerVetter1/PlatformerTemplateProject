@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://cff52c337vdw6"]
+
+[ext_resource type="Script" path="res://scripts/MainMenuButtonsManager.gd" id="1_oq5yg"]
+
+[node name="MainMenuButtonsManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oq5yg")
+
+[node name="LoadWorld1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 304.0
+offset_right = 624.0
+offset_bottom = 407.0
+text = "Load World 1"
+
+[node name="LoadWorld2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 424.0
+offset_right = 624.0
+offset_bottom = 528.0
+text = "Load World 2"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -3.0
+offset_right = 1127.0
+offset_bottom = 170.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 19.0
+offset_right = 758.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 29
+text = "Welcome to the GDC
+ (Game Design Clubs)
+Template Project"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="LoadWorld1" to="." method="_on_load_world_1_pressed"]
+[connection signal="pressed" from="LoadWorld2" to="." method="_on_load_world_2_pressed"]
