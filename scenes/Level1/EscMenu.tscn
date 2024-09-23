@@ -29,6 +29,7 @@ offset_bottom = 373.0
 text = "Settings"
 
 [node name="ReturnToMainMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 400.0
 offset_right = 637.0
