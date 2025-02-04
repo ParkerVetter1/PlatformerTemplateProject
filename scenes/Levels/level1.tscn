@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=40 format=3 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l4ihi"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/Level1/player.tscn" id="1_rbmkf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/Level1/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/Level1/slime.tscn" id="6_l0s6b"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
+[ext_resource type="PackedScene" uid="uid://6atpbv3h3u7j" path="res://scenes/Level1/bad_knight.tscn" id="11_qq56v"]
 [ext_resource type="Script" path="res://scripts/coin.gd" id="11_yombu"]
 [ext_resource type="Texture2D" uid="uid://bped01tsjeycn" path="res://assets/sprites/coin.png" id="12_cpcmb"]
 
@@ -415,10 +416,13 @@ unique_name_in_owner = true
 script = ExtResource("1_l4ihi")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.988
 offset_left = 1472.0
 offset_top = 80.0
-offset_right = 1577.0
-offset_bottom = 99.0
+offset_right = 425.0
+offset_bottom = -541.224
 theme_override_colors/font_color = Color(1, 0.823529, 0.2, 1)
 theme_override_fonts/font = ExtResource("2_nlliu")
 theme_override_font_sizes/font_size = 8
@@ -613,9 +617,6 @@ text = "< and > to move
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Slime2" parent="Enemies" instance=ExtResource("6_l0s6b")]
-position = Vector2(527, 80)
-
 [node name="Slime" parent="Enemies" instance=ExtResource("6_l0s6b")]
 position = Vector2(420, 112)
 
@@ -624,6 +625,9 @@ position = Vector2(1017, 160)
 
 [node name="Slime4" parent="Enemies" instance=ExtResource("6_l0s6b")]
 position = Vector2(1409, 160)
+
+[node name="BadKnight" parent="Enemies" instance=ExtResource("11_qq56v")]
+position = Vector2(536, 72)
 
 [node name="PickUps" type="Node" parent="."]
 
@@ -646,8 +650,5 @@ libraries = {
 "": SubResource("AnimationLibrary_n6rc8")
 }
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="visibility_changed" from="GameManager/EscMenu" to="GameManager" method="_on_esc_menu_visibility_changed"]
 [connection signal="body_entered" from="PickUps/DoubleJumpPowerUp" to="Player" method="_on_double_jump_power_up_body_entered"]
-[connection signal="timeout" from="Timer" to="Killzone" method="_on_timer_timeout"]

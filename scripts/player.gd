@@ -10,6 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+func _ready() -> void:
+	Engine.time_scale = 1.0
+
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():

@@ -6,9 +6,5 @@ func _on_body_entered(body):
 	print("You died!")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
-	timer.start(1)
-
-
-func _on_timer_timeout():
-	Engine.time_scale = 1.0
+	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()

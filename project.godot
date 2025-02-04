@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/Level1/music.tscn"
 
-[display]
-
-window/size/viewport_width=1079
-
 [dotnet]
 
 project/assembly_name="First Game"
